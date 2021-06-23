@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- PARA PODER USAR REACT SOLO ES NECESARIO AGREGAR ESTAS DOS LIBRERIAS-->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"
+    ></script>
+    <!-- Load Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-------------------------------------------------------------------------------------------------->
+    <title>Variables Interpolares</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+    // Asignación Basica de variable
+      const nombre = prompt("Escribe tu nombre");
+
+      //Para imprimir una variable solo es necesario ponerlo entre {} 
+      const Interpolar = () => {
+        return (
+          <div>
+            <h1>Hola {nombre}</h1> 
+            <hr />
+          </div>
+        );
+      };
+      ReactDOM.render(<Interpolar />, document.getElementById("root"));
+    </script>
+  </body>
+</html>

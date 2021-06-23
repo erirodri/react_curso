@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplificación de la estructura basica de los documentos en proyectos React</title>
+    <!-- PARA PODER USAR REACT SOLO ES NECESARIO AGREGAR ESTAS DOS LIBRERIAS-->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"
+    ></script>
+    <!-- Load Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-------------------------------------------------------------------------------------------------->
+</head>
+<body>
+    <div id="root"></div>
+    <div id="contador"></div>
+    
+    <!-- Al final de body indicamos todos los documentos a utilizar en el proyecto
+        La ORGANIZACIÓN de los documentos es muy importante para que durante la carga de la pagina las dependencias no manden error
+        El documento que sirve como puente entre el HTML y la logica se DEBE CARGAR HASTA EL ULTIMO ya que es quien manda a llamar las
+        etiquetas propias que se crean con base en lo que definimos en los documentos anteriores
+    -->
+    <script type="text/babel" src="componentes/Contenido.js"></script>
+    <script type="text/babel" src="./index.js"></script>
+   
+</body>
+</html>

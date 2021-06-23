@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- PARA PODER USAR REACT SOLO ES NECESARIO AGREGAR ESTAS DOS LIBRERIAS-->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"
+    ></script>
+    <!-- Load Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-------------------------------------------------------------------------------------------------->
+    <title>React CDN</title>
+  </head>
+  <body>
+    <!-- Dentro de esta etiqueta *div* es donde mostraremos todos nuestros componentes react
+                El ID es inidiferente.. pero por documentación la llamamos ROOT
+    -->
+    <div id="main"></div>
+    <div id="root"></div>
+    <div id="oldRender"></div>
+    <div id="declarativo"></div>
+
+    <script>
+      //Solo para conoces todo lo que contiene REACT
+      console.log(React);
+      console.log(ReactDOM);
+      //------------------------------------------
+      //    React.createElement( (etiquetaDondeAlmacenaContenido, argumentos, contenidoAmostrar) , donde-Renderizar-contenido);
+      ReactDOM.render(
+        React.createElement("h1", null, "Hola Mundo"),
+        document.getElementById("main")
+      );
+    </script>
+
+    <!--Usando BABEL-->
+    <script type="text/babel">
+      ReactDOM.render(
+        <div>
+          <ul>
+            <li>Manzana</li>
+            <li>Uva</li>
+            <li>Naranja</li>
+          </ul>
+        </div>,
+        document.getElementById("root")
+      );
+
+      //FORMA ANTIGUA UTILIZANDO CLASES
+      class ListaVertudas extends React.Component {
+        render() {
+          return (
+            <ul>
+              <h1>Lista Utilizando POO</h1>
+              <li>Papa</li>
+              <li>Jitomate</li>
+              <li>Cebolla</li>
+            </ul>
+          );
+        }
+      }
+
+      ReactDOM.render(
+        <ListaVertudas></ListaVertudas>,
+        document.getElementById("oldRender")
+      );
+
+      //FORMA DECLARATIVA (**RECOMENDADO**)
+      const listaAutos = () => {
+        return (
+          <ol>
+            <h1>Lista Utilizando forma DECLARATIVA</h1>
+            <li>VW</li>
+            <li>BMW</li>
+            <li>AUDI</li>
+          </ol>
+        );
+      };
+      ReactDOM.render(
+        <listaAutos></listaAutos>,
+        document.getElementById("declarativo")
+      );
+    </script>
+  </body>
+</html>
